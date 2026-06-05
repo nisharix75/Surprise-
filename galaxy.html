@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galaxy Friendship Test 🌌</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:linear-gradient(-45deg,#050816,#0f172a,#1e1b4b,#4c1d95);
+    background-size:400% 400%;
+    animation:bg 12s ease infinite;
+    color:white;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+h1{
+    text-align:center;
+    font-size:2rem;
+    margin-bottom:40px;
+    text-shadow:0 0 20px #fff;
+    padding:0 20px;
+}
+
+.buttons{
+    position:relative;
+    width:100%;
+    height:200px;
+}
+
+button{
+    padding:15px 35px;
+    border:none;
+    border-radius:15px;
+    font-size:20px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#yes{
+    position:absolute;
+    left:40%;
+    top:50%;
+    background:#22c55e;
+    color:white;
+    box-shadow:0 0 20px #22c55e;
+}
+
+#no{
+    position:absolute;
+    left:55%;
+    top:50%;
+    background:#ef4444;
+    color:white;
+    box-shadow:0 0 20px #ef4444;
+}
+
+#result{
+    text-align:center;
+    font-size:1.5rem;
+    padding:20px;
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🌌 In this Huge Galaxy, are we still friends? ⭐</h1>
+
+<div class="buttons">
+    <button id="yes">🚀 Yes</button>
+    <button id="no">👽 No</button>
+</div>
+
+<div id="result">
+    <h2>💔 Signal lost...</h2>
+    <p>Friendship satellite crashed.</p>
+    <br>
+    <p><b>Wow, you chose No. 😭</b></p>
+</div>
+
+<script>
+const yesBtn = document.getElementById("yes");
+const noBtn = document.getElementById("no");
+
+yesBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 80);
+
+    yesBtn.style.left = x + "px";
+    yesBtn.style.top = y + "px";
+});
+
+yesBtn.addEventListener("click", () => {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 80);
+
+    yesBtn.style.left = x + "px";
+    yesBtn.style.top = y + "px";
+});
+
+noBtn.addEventListener("click", () => {
+    document.querySelector("h1").style.display = "none";
+    document.querySelector(".buttons").style.display = "none";
+    document.getElementById("result").style.display = "block";
+});
+</script>
+
+</body>
+</html>
